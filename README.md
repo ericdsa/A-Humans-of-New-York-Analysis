@@ -1,4 +1,4 @@
-This program collects posts from a public page (Humans of New York), predicts the like count for the next posts, and performs text mining on the most recent posts.
+This script collects posts from a public page (Humans of New York), predicts the like count for the next posts, and performs text mining on the most recent posts.
 
 The like count prediction works in the following process:
 1) Collects the 100 most recent posts of Humans of New York from Facebook (NOTE: needs a valid Facebook API key not included in this repository)
