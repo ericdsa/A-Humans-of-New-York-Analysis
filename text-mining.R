@@ -10,13 +10,16 @@ library(Rfacebook)
 library(tm)
 library(wordcloud)
 
+# load oauth token
+load("./oauth-tokens/fb_oauth")
+
 # gets range of dates to pull posts from
 current_date = Sys.Date()
 one_year_ago = as.Date(-365, Sys.Date())
 number_posts = 100
 
 # pulls all posts of Humans of New York from current date to one year ago
-HONY <- getPage(page="humansofnewyork", n = number_posts, since=one_year_ago, until=current_date)
+HONY <- getPage(page="humansofnewyork", fb_oauth, n = number_posts, since=one_year_ago, until=current_date)
 
 # stores messages in posts in a corpus
 messages <- as.data.frame(HONY["message"])
